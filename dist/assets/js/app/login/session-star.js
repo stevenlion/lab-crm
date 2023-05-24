@@ -11,7 +11,7 @@ function fetchAndRenderResults() {
   const cacheBust = Date.now();
 
   // Realizar la solicitud GET a la API
-  fetch(`https://api.vitalidadintegral.store/login/user-data.php?id=${idSessionStartConsult}&cacheBust=${cacheBust}`)
+  fetch(`https://api.lab-crm.ws/login/user-data.php?id=${idSessionStartConsult}&cacheBust=${cacheBust}`)
     .then(response => response.json()) // Decodificar la respuesta JSON
     .then(data => {
       if (Array.isArray(data)) {

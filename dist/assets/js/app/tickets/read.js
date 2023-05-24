@@ -69,7 +69,7 @@ function fetchAndRenderResultsTickets() {
 	const cacheBust = Date.now();
 
 	// Realizar la solicitud GET a la API
-	fetch(`https://api.vitalidadintegral.store/tickets/read/?responsible=1&cacheBust=${cacheBust}`)
+	fetch(`https://api.lab-crm.ws/tickets/read/?responsible=1&cacheBust=${cacheBust}`)
 		.then(response => response.json()) // Decodificar la respuesta JSON
 		.then(data => {
 			if (Array.isArray(data)) {

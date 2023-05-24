@@ -29,7 +29,7 @@ document.getElementById('btn-create-ticket').addEventListener('click', function(
     formData.append('observation', ElementObservation.value);
     formData.append('state', '1');
   
-    fetch('https://api.vitalidadintegral.store/tickets/create/', {
+    fetch('https://api.lab-crm.ws/tickets/create/', {
       method: 'POST',
       body: formData
     })
