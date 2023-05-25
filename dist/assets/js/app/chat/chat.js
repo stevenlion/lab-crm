@@ -16,12 +16,11 @@ function handleClick(element) {
     
     // Obtiene el elemento del documento con el Id y lo asigna a la variable chatIdUserName
     chatIdUserName = document.getElementById('chatId-text');
-    contactNumber = document.getElementById('addcell-phone-number-input');
+    contactNumber = document.getElementById('ticket-cell-phone-number-input');
 
     // Asigna el valor de la variable chatId al contenido de texto del elemento chatIdUserName
     chatIdUserName.textContent = chatId;
     contactNumber.value = chatId;
-
 
     var container = document.querySelector('.simplebar-content-wrapper');
     
@@ -68,9 +67,6 @@ function renderMessages(data) {
                                 <div class="ctext-wrap">                            
                                     <div class="ctext-wrap-content">                                
                                         <p class="mb-0 ctext-content">${formattedBody}</p>   
-                                        
-                                        <p id="from-number">${chatId}</p>
-    
                                     </div>                                            
                                 </div>                    
                                 <div class="conversation-name">                        
@@ -101,9 +97,6 @@ function renderMessages(data) {
                             <div class="ctext-wrap">                            
                                 <div class="ctext-wrap-content">                                
                                     <p class="mb-0 ctext-content">Se eliminó este mensaje.</p>   
-                                    
-                                    <p id="from-number">${chatId}</p>
-
                                 </div>                                            
                             </div>                    
                             <div class="conversation-name">                                             
@@ -123,9 +116,6 @@ function renderMessages(data) {
                             <div class="ctext-wrap">                            
                                 <div class="ctext-wrap-content">                                
                                     <p class="mb-0 ctext-content">${formattedBody}</p>   
-                                    
-                                    <p id="from-number">${chatId}</p>
-
                                 </div>                                            
                             </div>                    
                             <div class="conversation-name">                        

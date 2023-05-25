@@ -12,7 +12,7 @@ inputElement.addEventListener('keydown', function(event) {
 
 
 // Capturar el evento de clic del botón de envío
-document.getElementById('submit-btn').addEventListener('click', function(event) {
+document.getElementById('btn-send-message').addEventListener('click', function(event) {
   event.preventDefault(); // Evitar que la página se recargue
 
   // Obtener el mensaje ingresado
@@ -25,7 +25,7 @@ document.getElementById('submit-btn').addEventListener('click', function(event) 
     // Enviar mensaje
     const params = new URLSearchParams({
       token: 'w8iavep1womskmas',
-      to: document.getElementById('from-number').textContent,
+      to: document.getElementById('chatId-text').textContent,
       body: message,
       priority: '1',
       referenceId: '',

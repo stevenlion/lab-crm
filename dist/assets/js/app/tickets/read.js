@@ -35,17 +35,27 @@ function renderListItemsTickets(data) {
 		// Construir el elemento de lista y agregarlo a la variable
 		listItemsTickets += `<li>
 		<div class="d-flex align-items-center">
-			<div class="flex-shrink-0 avatar-xs ms-1 me-3">
-				<div class="avatar-title bg-soft-${colorstatus} text-${colortext} rounded-circle">
-					<i class="${iconsstatus}"></i>
-					</div>
-				</div>
-				<div class="flex-grow-1 overflow-hidden">
-					<h5 class="font-size-14 mb-1"><a href="#" class="text-truncate p-0">${id} - ${affair}</a></h5>
-					<p class="text-muted text-truncate font-size-13 mb-0">${freation_date}</p>
-				</div>
-			</div>
-		</li>
+		   <div class="flex-shrink-0 avatar-xs ms-1 me-3">
+			  <div class="avatar-title bg-soft-${colorstatus} text-${colortext} rounded-circle">
+				 <i class="${iconsstatus}"></i>
+			  </div>
+		   </div>
+		   <div class="flex-grow-1 overflow-hidden">
+			  <h5 class="font-size-14 mb-1"><a class="text-truncate p-0">${id} - ${affair}</a></h5>
+			  <p class="text-muted text-truncate font-size-13 mb-0">${freation_date}</p>
+		   </div>
+		   <div class="dropdown">
+			  <a class="dropdown-toggle font-size-18 text-muted px-1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			  <i class="bx bx-dots-horizontal-rounded"></i>
+			  </a>
+			  <div class="dropdown-menu dropdown-menu-end">
+				 <a class="dropdown-item d-flex align-items-center justify-content-between" href="${id}" onclick="handleClickIdObservacion(this)" data-bs-toggle="modal" data-bs-target="#addUpdateTicket-exampleModal">Observación <i class="bx bx-pencil ms-2 text-muted"></i></a>
+				 <div class="dropdown-divider"></div>
+				 <a class="dropdown-item d-flex align-items-center justify-content-between" href="#">Cerrar <i class="bx bx-check-circle ms-2 text-muted"></i></a>
+			  </div>
+		   </div>
+		</div>
+	 </li>
 		`;
 	});
 

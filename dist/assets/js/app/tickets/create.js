@@ -1,9 +1,9 @@
 // Obtén una referencia al elemento donde deseas asignar la función al presionar Enter
-const ElementCellPhoneNumber = document.getElementById('addcell-phone-number-input');
-const ElementPriority = document.getElementById('addpriority-input');
-const ElementResponsible = document.getElementById('addresponsible-input');
-const ElementAffair = document.getElementById('addaffair-input');
-const ElementObservation = document.getElementById('addobservation-input');
+const ElementCellPhoneNumber = document.getElementById('ticket-cell-phone-number-input');
+const ElementPriority = document.getElementById('ticket-priority-input');
+const ElementResponsible = document.getElementById('ticket-responsible-input');
+const ElementAffair = document.getElementById('ticket-affair-input');
+const ElementObservation = document.getElementById('ticket-observation-input');
 
 // Asigna la función al evento keydown o keyup del elemento
 ElementObservation.addEventListener('keydown', function(event) {
@@ -33,10 +33,12 @@ document.getElementById('btn-create-ticket').addEventListener('click', function(
       method: 'POST',
       body: formData
     })
-      .then(response => response.text())
+      .then(response => response.json())
       .then(data => {
-        console.log('API response:', data);
+        console.log(data.message);
+        
         fetchAndRenderResultsTickets();
+        showAlert(data.message);
       })
       .catch(error => {
         console.error('Failed to create ticket:', error);
@@ -49,7 +51,17 @@ document.getElementById('btn-create-ticket').addEventListener('click', function(
     ElementObservation.value = '';
   } else {
     // Mostrar un mensaje de error si no se ingresó ningún campo
-    const feedbackElement = document.querySelector('.addobservation-input');
+    const feedbackElement = document.querySelector('.ticket-observation-input');
     feedbackElement.textContent = 'Por favor, ingresa todos los campos';
   }  
 });
+
+function showAlert(message) {
+  const alertContainer = document.getElementById('alert-container');
+  alertContainer.textContent = message;
+  alertContainer.classList.add('show');
+
+  setTimeout(() => {
+    alertContainer.classList.remove('show');
+  }, 3000);
+}

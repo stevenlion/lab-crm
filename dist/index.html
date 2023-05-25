@@ -29,7 +29,7 @@
     <body>
 
         <div class="layout-wrapper d-lg-flex">
-
+            
             <!-- Start left sidebar-menu -->
             <div class="side-menu flex-lg-column">
                 <!-- LOGO -->
@@ -1126,7 +1126,7 @@
                                                     </button>
                                                 </div>
                                                 <div class="links-list-item">
-                                                    <button type="button" class="btn btn-primary btn-lg chat-send waves-effect waves-light" id="submit-btn">
+                                                    <button type="button" class="btn btn-primary btn-lg chat-send waves-effect waves-light" id="btn-send-message">
                                                         <i class="bx bxs-send align-middle"></i>
                                                     </button>
                                                 </div>
@@ -1655,7 +1655,7 @@
             </div>
             <!-- End Add contact Modal -->
 
-            <!-- Start Add novelty Modal -->
+            <!-- Start Add ticket Modal -->
             <div class="modal fade" id="addNovelty-exampleModal" tabindex="-1" role="dialog" aria-labelledby="addContact-exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
                     <div class="modal-content modal-header-colored shadow-lg border-0">
@@ -1668,11 +1668,11 @@
                             <form>
                                 <div class="mb-3">
                                     <label for="addcontactemail-input" class="form-label">Número *</label>
-                                    <input type="text" class="form-control" id="addcell-phone-number-input" placeholder="Ingrese el número" required>
+                                    <input type="text" class="form-control" id="ticket-cell-phone-number-input" placeholder="Ingrese el número" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="addcontactname-input" class="form-label">Prioridad *</label>
-                                    <select type="text" class="form-control" id="addpriority-input" required>
+                                    <select type="text" class="form-control" id="ticket-priority-input" required>
                                         <option value="">Seleccione una prioridad</option>
                                         <option value="1">Alta - 8 Hrs</option>
                                         <option value="2">Media - 16 Hrs</option>
@@ -1681,7 +1681,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="addcontactname-input" class="form-label">Responsable *</label>
-                                    <select type="text" class="form-control" id="addresponsible-input" required>
+                                    <select type="text" class="form-control" id="ticket-responsible-input" required>
                                         <option value="">Seleccione un responsable</option>
                                         <option value="1">German Perez Toro</option>
                                         <option value="2">Juan Stiven Agudelo</option>
@@ -1690,23 +1690,49 @@
                                 </div>
                                 <div class="mb-3">
                                     <label for="addcontactname-input" class="form-label">Asunto (Se Breve) *</label>
-                                    <input type="text" class="form-control" id="addaffair-input" required>
+                                    <input type="text" class="form-control" id="ticket-affair-input" required>
                                 </div>
                                 <div class="mb-0">
                                     <label for="addcontact-invitemessage-input" class="form-label">Observación *</label>
-                                    <textarea class="form-control" id="addobservation-input" rows="3" placeholder="Ingrese la observación" required></textarea>
+                                    <textarea class="form-control" id="ticket-observation-input" rows="3" placeholder="Ingrese la observación" required></textarea>
                                 </div>
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-link" data-bs-dismiss="modal">Cerrar</button>
                             <button type="button" id="btn-create-ticket" class="btn btn-primary">Crear</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Add ticket Modal -->
+
+            <!-- Start Update ticket Modal -->
+            <div class="modal fade" id="addUpdateTicket-exampleModal" tabindex="-1" role="dialog" aria-labelledby="addContact-exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                    <div class="modal-content modal-header-colored shadow-lg border-0">
+                        <div class="modal-header">
+                            <h5 class="modal-title text-white font-size-16" id="addContact-exampleModalLabel">Agregar Observacion Al Ticket</h5>
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="modal-body p-4">
+                            <form>
+                                <div class="mb-0">
+                                    <label for="addcontact-invitemessage-input" class="form-label">Observación *</label>
+                                    <textarea class="form-control" id="add-observation-input" rows="3" placeholder="Ingrese la observación" required></textarea>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-link" data-bs-dismiss="modal">Cerrar</button>
+                            <button type="button" id="btn-add-observation" class="btn btn-primary">Agregar</button>
                             <div id="alert-container"></div>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- End Add contact Modal -->
+            <!-- End Update ticket Modal -->
 
             <!-- audiocall Modal -->
             <div class="modal fade audiocallModal" tabindex="-1" aria-hidden="true">
@@ -2638,7 +2664,10 @@
             <!-- <video id="video" autoplay="true">
 
             </video>     -->
+
+            <div id="alert-container"></div>
         </div>
+
         <!-- end  layout wrapper -->
 
         <!-- JAVASCRIPT -->
@@ -2664,10 +2693,7 @@
         <script src="./assets/js/app/message/message.js"></script>
         <script src="./assets/js/app/tickets/create.js"></script>
         <script src="./assets/js/app/login/logout.js"></script>
-        
-
-
-
         <script src="./assets/js/app/tickets/read.js"></script>
+        <script src="./assets/js/app/tickets/add-observation.js"></script>
     </body>
 </html>
