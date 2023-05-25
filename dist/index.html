@@ -92,8 +92,8 @@
                             </a>
                             <div class="dropdown-menu">
                                 <a class="dropdown-item d-flex align-items-center justify-content-between" id="pills-user-tab" data-bs-toggle="pill" href="#pills-user" role="tab">Perfil <i class="bx bx-user-circle text-muted ms-1"></i></a>
-                                <a class="dropdown-item d-flex align-items-center justify-content-between" id="pills-setting-tab" data-bs-toggle="pill" href="#pills-setting" role="tab">Configuración <i class="bx bx-cog text-muted ms-1"></i></a>
-                                <a class="dropdown-item d-flex align-items-center justify-content-between" href="auth-changepassword.html">Contraseña <i class="bx bx-lock-open text-muted ms-1"></i></a>
+                                <!---<a class="dropdown-item d-flex align-items-center justify-content-between" id="pills-setting-tab" data-bs-toggle="pill" href="#pills-setting" role="tab">Configuración <i class="bx bx-cog text-muted ms-1"></i></a>--->
+                                <!---<a class="dropdown-item d-flex align-items-center justify-content-between" href="auth-changepassword.html">Contraseña <i class="bx bx-lock-open text-muted ms-1"></i></a>--->
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item d-flex align-items-center justify-content-between" id="logout-link">Cerrar sesión <i class="bx bx-log-out-circle text-muted ms-1"></i></a>
                             </div>
@@ -1718,6 +1718,15 @@
                         </div>
                         <div class="modal-body p-4">
                             <form>
+                                <div class="mb-3">
+                                    <label for="addcontactname-input" class="form-label">Estado</label>
+                                    <select type="text" class="form-control" id="add-state-input" required>
+                                        <option value="1">Seleccione un estado</option>
+                                        <option value="2">En proceso</option>
+                                        <option value="3">Solucionado</option>
+                                        <option value="4">Novedad</option>
+                                    </select>
+                                </div>
                                 <div class="mb-0">
                                     <label for="addcontact-invitemessage-input" class="form-label">Observación *</label>
                                     <textarea class="form-control" id="add-observation-input" rows="3" placeholder="Ingrese la observación" required></textarea>

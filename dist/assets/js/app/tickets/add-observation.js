@@ -16,6 +16,7 @@ function handleClickIdObservacion(element) {
 // Obtén una referencia al elemento donde deseas asignar la función al presionar Enter
 const inputIdTicket = document.getElementById('id-ticket-input');
 const inputObservation = document.getElementById('add-observation-input');
+const inputState = document.getElementById('add-state-input');
 
 // Asigna la función al evento keydown o keyup del elemento
 inputObservation.addEventListener('keydown', function(event) {
@@ -36,6 +37,7 @@ if (idTicket !== '') {
     const formData = new FormData();
     formData.append('idticket', idTicket);
     formData.append('observation', inputObservation.value);
+    formData.append('state', inputState.value);
   
     fetch('https://api.lab-crm.ws/tickets/add-observation/', {
       method: 'POST',
@@ -53,6 +55,7 @@ if (idTicket !== '') {
   
     // Restablecer el valor del campo de entrada
     inputObservation.value = '';
+    inputState.value = 'Seleccione un estado';
   } else {
     // Mostrar un mensaje de error si no se ingresó ningún campo
     const feedbackElement = document.querySelector('.add-observation-input');

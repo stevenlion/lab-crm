@@ -1,7 +1,6 @@
 // Variables globales para almacenar el último estado de los datos
 let lastListItemsTickets = '';
 
-
 // Función para procesar y mostrar los elementos de la lista
 function renderListItemsTickets(data) {
 	// Variable para almacenar los elementos de lista
@@ -45,8 +44,8 @@ function renderListItemsTickets(data) {
 			  <p class="text-muted text-truncate font-size-13 mb-0">${freation_date}</p>
 		   </div>
 		   <div class="dropdown">
-			  <a class="dropdown-toggle font-size-18 text-muted px-1" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-			  <i class="bx bx-dots-horizontal-rounded"></i>
+			  <a class="dropdown-toggle font-size-18 text-muted px-1" role="button" href="${id}" onclick="handleClickIdObservacion(this)" data-bs-toggle="modal" data-bs-target="#addUpdateTicket-exampleModal">
+			  <i class="bx bx-pencil ms-2 text-muted"></i>
 			  </a>
 			  <div class="dropdown-menu dropdown-menu-end">
 				 <a class="dropdown-item d-flex align-items-center justify-content-between" href="${id}" onclick="handleClickIdObservacion(this)" data-bs-toggle="modal" data-bs-target="#addUpdateTicket-exampleModal">Observación <i class="bx bx-pencil ms-2 text-muted"></i></a>
@@ -79,7 +78,7 @@ function fetchAndRenderResultsTickets() {
 	const cacheBust = Date.now();
 
 	// Realizar la solicitud GET a la API
-	fetch(`https://api.lab-crm.ws/tickets/read/?responsible=1&cacheBust=${cacheBust}`)
+	fetch(`https://api.lab-crm.ws/tickets/read/?responsible=${idSessionStartConsult}&cacheBust=${cacheBust}`)
 		.then(response => response.json()) // Decodificar la respuesta JSON
 		.then(data => {
 			if (Array.isArray(data)) {
