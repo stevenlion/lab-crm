@@ -272,8 +272,8 @@ function fetchAndRenderMessages() {
 			console.log('Error en la solicitud:', error);
 		})
 		.finally(() => {
-			// Llamar a la función nuevamente después de 8 segundos
-			setTimeout(fetchAndRenderMessages, 8000);
+			// Llamar a la función nuevamente después de 5 segundos
+			setTimeout(fetchAndRenderMessages, 5000);
 		});
 }
 

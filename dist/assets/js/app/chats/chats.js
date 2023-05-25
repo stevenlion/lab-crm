@@ -7,7 +7,7 @@ function renderListItems(data) {
 	let listItems = '';
 
 	// Limitar el número de elementos a procesar utilizando slice
-	const limitedData = data.slice(0, 50); // Limitar a los primeros 30 elementos
+	const limitedData = data.slice(0, 170); // Limitar a los primeros 30 elementos
 
 	// Iterar sobre los elementos del arreglo limitado
 	limitedData.forEach(item => {
@@ -15,23 +15,33 @@ function renderListItems(data) {
 		const id = item.id;
 		const name = item.name;
 		const unread = item.unread;
+        
+		// Si lo(s) no leído(s) es mayor a 0 se muestran lo que hay pendiente
+		if (unread > 0) {
 
-		// Construir el elemento de lista y agregarlo a la variable
-		listItems += `
+			// Construir el elemento de lista y agregarlo a la variable
+			listItems += `
 			<li id="contact-id-6" data-name="direct-message">                  
-                <a class="unread-msg-user" href="${id}" onclick="handleClick(this)">                   
-                    <div class="d-flex align-items-center">                      
-                        <div class="chat-user-img online align-self-center me-2 ms-0">                          
-                            <img src="assets/images/users/user-dummy-img.jpg" class="rounded-circle avatar-xs" alt=""><span class="user-status"></span>                      
-                        </div>                      
-                        <div class="overflow-hidden">                          
-                            <p class="text-truncate mb-0">${name}</p>                      
-                        </div>                      
-                        <div class="ms-auto"><span class="badge badge-soft-dark rounded p-1">${unread}</span></div>                  
-                    </div>              
-                </a>          
-            </li>
+				<a class="unread-msg-user" href="${id}" onclick="handleClick(this)">                   
+					<div class="d-flex align-items-center">                      
+						<div class="chat-user-img online align-self-center me-2 ms-0">                          
+							<img src="assets/images/users/user-dummy-img.jpg" class="rounded-circle avatar-xs" alt=""><span class="user-status"></span>                      
+						</div>                      
+						<div class="overflow-hidden">                          
+							<p class="text-truncate mb-0">${name}</p>                      
+						</div>                      
+						<div class="ms-auto"><span class="badge badge-soft-dark rounded p-1">${unread}</span></div>                  
+					</div>              
+				</a>          
+			</li>
 		`;
+
+		} else {
+
+			listItems += ``
+			
+		}
+
 	});
 
 	// Obtener el elemento ul donde se mostrarán los resultados
@@ -68,8 +78,8 @@ function fetchAndRenderResults() {
 			console.log('Error en la solicitud:', error);
 		})
 		.finally(() => {
-			// Llamar a la función nuevamente después de 8 segundos
-			setTimeout(fetchAndRenderResults, 8000);
+			// Llamar a la función nuevamente después de 5 segundos
+			setTimeout(fetchAndRenderResults, 5000);
 		});
 }
 
