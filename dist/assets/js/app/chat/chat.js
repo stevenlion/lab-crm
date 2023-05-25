@@ -88,6 +88,10 @@ function renderMessages(data) {
             
                 htmlContent += ``;
 
+            } else if (type === 'call_log') {
+            
+                htmlContent += ``;
+
             } else if (type === 'revoked') {
             
                 htmlContent += `
@@ -173,6 +177,10 @@ function renderMessages(data) {
                 htmlContent += ``;
 
             } else if (type === 'protocol') {
+            
+                htmlContent += ``;
+
+            } else if (type === 'call_log') {
             
                 htmlContent += ``;
 
