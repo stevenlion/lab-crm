@@ -78,8 +78,8 @@ function fetchAndRenderResults() {
 			console.log('Error en la solicitud:', error);
 		})
 		.finally(() => {
-			// Llamar a la función nuevamente después de 5 segundos
-			setTimeout(fetchAndRenderResults, 5000);
+			// Llamar a la función nuevamente después de 9 segundos
+			setTimeout(fetchAndRenderResults, 9000);
 		});
 }
 
