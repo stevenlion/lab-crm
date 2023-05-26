@@ -9,11 +9,7 @@ function handleClick(element) {
     
     // Obtener el valor de href del elemento
     chatId = element.getAttribute('href');
-    
-    // Realizar las operaciones necesarias con el valor de chatId
-    console.log('chatId:', chatId);
-    // ...otro código aquí
-    
+        
     // Obtiene el elemento del documento con el Id y lo asigna a la variable chatIdUserName
     chatIdUserName = document.getElementById('chatId-text');
     contactNumber = document.getElementById('ticket-cell-phone-number-input');
@@ -280,8 +276,8 @@ function fetchAndRenderMessages() {
 			console.log('Error en la solicitud:', error);
 		})
 		.finally(() => {
-			// Llamar a la función nuevamente después de 9 segundos
-			setTimeout(fetchAndRenderMessages, 9000);
+			// Llamar a la función nuevamente después de 8 segundos
+			setTimeout(fetchAndRenderMessages, 8000);
 		});
 }
 
